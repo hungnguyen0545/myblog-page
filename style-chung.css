@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap&subset=vietnamese');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: initial;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    position: relative;
+}
+
+.full-size {
+    width: 100%;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    margin: 5px;
+}
+
+a[data-tool-tip] {
+    position: relative;
+}
+
+a[data-tool-tip]::after {
+    content: attr(data-tool-tip);
+    cursor: pointer;
+    display: block;
+    background-color: gray;
+    text-align: center;
+    padding: 8px;
+    border-radius: 30px;
+    transform: scale(0);
+    transition: transform ease-out 300ms, bottom ease-out 300ms;
+}
+
+a[data-tool-tip]:hover::after {
+    transform: scale(1);
+    bottom: 100%;
+}
+
+ul {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+}
+
+li {
+    margin-left: 3px;
+    border: 2px solid rgb(41, 40, 40, 0.7);
+    background-color: gray;
+    height: 100%;
+    border-radius: 5px;
+}
+
+li:hover {
+    border-left: 5px solid rgb(41, 40, 40, 0.7);
+    background-color: rgb(97, 94, 94, 0.8);
+    transition-timing-function: 0.5s;
+    border-radius: 8px;
+}
+
+.fl {
+    float: left;
+    margin-left: 10px;
+}
+
+.fr {
+    float: right;
+    margin-right: 10px;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+.justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.half {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box {
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 13px;
+    border-style: dashed;
+}
+
+img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*top - nav*/
+
+#top {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    text-align: center;
+    font-size: 18px;
+}
+
+.nav-left,
+.nav-right {
+    width: 40%;
+    height: 100%;
+    /*border-top: 1px solid gray;
+    border-bottom: 1px solid gray;*/
+}
+
+
+/* main-content*/
+
+.main-display {
+    height: initial;
+    margin: 37px 110px 0px 110px;
+    padding: 10px;
+}
+
+.background-image {
+    background-image: url(aboutme-background.jpg) !important;
+}
+
+.main-content {
+    background-color: rgb(226, 224, 224, 0.7);
+    text-align: justify;
+    width: 65%;
+}
+
+.extra-content {
+    width: 33%;
+}
+
+.folder {
+    background-color: rgb(226, 224, 224, 0.9);
+    width: 100%;
+    height: auto;
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 0px;
+    border-style: double;
+}
+
+.folder-title {
+    width: 100%;
+    height: 200px;
+    position: relative;
+}
+
+.background-my-face {
+    position: absolute;
+    height: 76%;
+    z-index: 1;
+}
+
+.my-face {
+    top: 50%;
+    height: 50%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
+
+.my-face img {
+    object-fit: cover;
+    width: 40%;
+    border-radius: 50%;
+}
+
+.author {
+    margin-top: 10px;
+}
+
+.folder-content-text p {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+
+/*Page For MyCV*/
+
+.part1,
+.part2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-me {
+    width: 150px;
+    height: 150px;
+    background-color: burlywood;
+    border-radius: 51%;
+    font-size: 28px;
+    font-weight: 900;
+}

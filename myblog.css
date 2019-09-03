@@ -1,0 +1,204 @@
+            @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap&subset=vietnamese');
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+            }
+            
+            html,
+            body {
+                width: 100%;
+                height: 100vh;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 20px;
+                position: relative;
+            }
+            
+            .custom-background {
+                background-image: url(custom-background.jpg);
+                background-size: auto;
+                background-attachment: fixed;
+                background-repeat: repeat;
+            }
+            
+            #top {
+                width: 100%;
+                height: 10%;
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            #middle {
+                width: 100%;
+                height: 90%;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            /*#bottom {
+    width: 100%;
+    height: 20%;
+}*/
+            /*top*/
+            
+            .logo {
+                margin-left: 35px;
+            }
+            /*middle*/
+            /*text*/
+            
+            .text {
+                position: absolute;
+                top: 5%;
+                text-align: center;
+            }
+            
+            .text #text1 {
+                font-size: 2.7rem;
+                font-weight: 600;
+                text-align: center;
+            }
+            
+            .text #text2 {
+                font-size: 2.3rem;
+                font-weight: 100;
+            }
+            /*The arrow*/
+            
+            .arrow {
+                position: absolute;
+                top: 27%;
+                left: 50%;
+                transform: translate(-50%, 50%)
+            }
+            
+            span {
+                display: block;
+                width: 28px;
+                height: 28px;
+                border-right: 1px solid black;
+                border-bottom: 1px solid black;
+                transform: rotate(45deg);
+                margin: -10px;
+                animation: animate 2s infinite;
+            }
+            
+            .arrow span:nth-child(2) {
+                animation-delay: 0.2s;
+            }
+            
+            .arrow span:nth-child(3) {
+                animation-delay: 0.4s;
+            }
+            
+            @keyframes animate {
+                0% {
+                    opacity: 0;
+                    transform: rorate(45deg) translate(-20px, -20px);
+                }
+                50% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                    transform: rorate(45deg) translate(20px, 20px);
+                }
+            }
+            /*box*/
+            
+            .box {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                top: 50%;
+                width: 23em;
+                height: 11rem;
+                border: 3px solid rgba(204, 142, 53, 0.8);
+            }
+            
+            .box a {
+                width: 92%;
+                height: 30%;
+            }
+            
+            .box .btn {
+                width: 100%;
+                height: 100%;
+                color: black;
+                text-decoration: none;
+                background-color: transparent;
+                font-size: 1.3rem;
+                font-weight: 100;
+                border: 2px solid rgba(0, 0, 0, 0.5);
+            }
+            
+            .btn:hover {
+                background: rgba(99, 110, 114, 0.8);
+                transition-delay: 0.1s;
+            }
+            
+            #About-Me {
+                margin-bottom: 1px;
+                margin-top: 5px;
+            }
+            
+            #Review-Book {
+                margin-bottom: 1px;
+            }
+            
+            #My-Think {
+                margin-bottom: 5px;
+            }
+            
+            @media screen and(max-width: 1300px) {
+                .text #text1 {
+                    font-size: 3.7rem;
+                }
+                .text #text2 {
+                    font-size: 3rem;
+                }
+                span {
+                    width: 35px;
+                    height: 35px;
+                }
+                .box {
+                    width: 30em;
+                    height: 16rem;
+                }
+            }
+            
+            @media screen and(max-width: 1024px) {
+                .box {
+                    width: 30em;
+                    height: 20rem;
+                }
+                .box .btn {
+                    font-size: 2.3rem;
+                }
+            }
+            
+            @media screen and (max-width: 800px) {
+                .text #text1 {
+                    font-size: 2rem;
+                }
+                .text #text2 {
+                    font-size: 1.5rem;
+                }
+                .box {
+                    width: 20em;
+                }
+            }
+            
+            @media screen and (max-width: 400px) {
+                .logo {
+                    font-size: 16px;
+                }
+                .box {
+                    width: 15em;
+                }
+            }

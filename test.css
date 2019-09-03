@@ -1,0 +1,183 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box
+}
+
+:root {
+    --gradient: linear-gradient( 45deg, #004a77, #00819c, #00b994, #51eb65);
+}
+
+html {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+body {
+    height: auto;
+    background-image: var(--gradient);
+    background-size: 400%;
+    animation: bg-animation 5s infinite alternate;
+}
+
+@keyframes bg-animation {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+}
+
+p {
+    justify-content: center;
+    margin: 10px;
+    display: flex;
+   position: relative;
+}
+
+.box {
+    width: 100%;
+    background-color: orange;
+}
+
+.top {
+    background-color: blue;
+    grid-area: top;
+}
+
+.middle1 {
+    background-color: blueviolet;
+    grid-area: middle1;
+}
+
+.middle2 {
+    background-color: blueviolet;
+    grid-area: middle2;
+}
+
+.bottom {
+    background-color: yellow;
+    grid-area: bottom;
+}
+
+.intro {
+    color: brown;
+    position: relative;
+    display: inline-block;
+    left: 32%;
+}
+
+.intro::before,
+.intro::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+}
+
+.intro::before {
+    background-color: red;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -2;
+}
+
+.intro::after {
+    z-index: -1;
+    background-color: aqua;
+}
+
+.gradient {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    padding: 0.5em 1.5em;
+    background-image: var(--gradient);
+    background-size: 300%;
+    background-position: left;
+    transition: background-position 1s;
+    display: none;
+}
+
+.gradient:focus,
+.gradient:hover {
+    background-position: right;
+}
+
+
+/* learn about transition*/
+
+.trans1,
+.trans2,
+.trans3,
+.trans4 {
+    background-color: blueviolet;
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+}
+
+.trans1 {
+    transition-duration: 2000ms;
+    transition-timing-function: linear;
+    transition-property: background, width;
+}
+
+.trans1:hover {
+    /*  background-color: tomato;
+    transform: rotate(45deg);*/
+    background-color: tomato;
+    width: 500px;
+}
+
+.trans2 {
+    transition-duration: 2000ms;
+    transition-timing-function: ease-in;
+}
+
+.trans2:hover {
+    width: 500px;
+}
+
+.trans3 {
+    transition-duration: 2000ms;
+    transition-timing-function: ease-out;
+}
+
+.trans3:hover {
+    width: 500px;
+}
+
+.trans4 {
+    transition-duration: 2000ms;
+    transition-timing-function: ease-in-out;
+}
+
+.trans4:hover {
+    width: 500px;
+}
+
+@media screen and (min-width: 430px) {
+    .box {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "top middle1" "middle2 middle1" "middle2 bottom ";
+    }
+}
+
+@media screen and (min-width: 780px) {
+    .box {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-rows: 1fr 2fr 1fr;
+        grid-template-areas: "top top middle1" "middle2 middle2 middle1" "bottom bottom .";
+    }
+}
